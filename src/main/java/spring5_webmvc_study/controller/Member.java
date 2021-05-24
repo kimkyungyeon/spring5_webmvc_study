@@ -8,7 +8,7 @@ public class Member {
 	private String password;
 	private String name;
 	private LocalDateTime registerDateTime;
-	
+
 	public Member(String email, String password, String name, LocalDateTime registerDateTime) {
 		super();
 		this.email = email;
@@ -56,11 +56,15 @@ public class Member {
 	public void setRegisterDateTime(LocalDateTime registerDateTime) {
 		this.registerDateTime = registerDateTime;
 	}
-	
+
 	public void changePassword(String oldPassword, String newPassword) {
-		if(!password.equals(oldPassword))
+		if (!password.equals(oldPassword))
 			throw new WrongIdPasswordException();
 		this.password = newPassword;
 	}
-	
+
+	public boolean matchPassword(String password) {
+		return this.password.equals(password);
+	}
+
 }

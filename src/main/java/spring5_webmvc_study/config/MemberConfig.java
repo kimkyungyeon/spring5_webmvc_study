@@ -1,5 +1,7 @@
 package spring5_webmvc_study.config;
 
+
+
 import org.apache.tomcat.jdbc.pool.DataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -8,12 +10,9 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import spring5_webmvc_study.controller.ChangePasswordService;
-import spring5_webmvc_study.controller.MemberDao;
-
 @Configuration
 @EnableTransactionManagement
-@ComponentScan(basePackages = { "spring5_webmvc_study.spring" })
+@ComponentScan(basePackages = { "spring5_webmvc_study.controller" })
 public class MemberConfig {
 	@Bean(destroyMethod = "close")
 	public DataSource dataSource() {

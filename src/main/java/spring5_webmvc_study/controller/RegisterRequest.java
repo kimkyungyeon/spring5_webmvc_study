@@ -2,6 +2,12 @@ package spring5_webmvc_study.controller;
 
 public class RegisterRequest {
 	
+	@Override
+	public String toString() {
+		return String.format("RegisterRequest [email=%s, password=%s, confirmPassword=%s, name=%s]", email, password,
+				confirmPassword, name);
+	}
+
 	private String email;
 	private String password;
 	private String confirmPassword;
